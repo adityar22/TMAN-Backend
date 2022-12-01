@@ -12,7 +12,7 @@ const eventsRouter = require('./server/routes/eventsRouter');
 
 const app = express();
 dotenv.config({ path: "config.env" })
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 9001;
 
 //tag req
 app.use(morgan('tiny'));
@@ -21,9 +21,7 @@ app.use(morgan('tiny'));
 connectDB();
 
 //parse req
-app.use(cors({
-    origin: 'http://localhost:3000'
-}));
+app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
